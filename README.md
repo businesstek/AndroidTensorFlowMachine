@@ -9,9 +9,11 @@
 
 
 <p align="center">
+My Results were not as successful:
   <img src="assets/pen_example.png" width="250">
   <img src="assets/wallet_example.png" width="250">
 </p>
+Repo Results:
 <img src=assets/sample_combined.png >
 <br>
 <br>
