@@ -18,6 +18,7 @@ package com.mindorks.tensorflowexample;
 
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Trace;
 import android.util.Log;
 
@@ -41,7 +42,7 @@ import java.util.Vector;
  */
 public class TensorFlowImageClassifier implements Classifier {
 
-    private static final String TAG = "TensorFlowImageClassifier";
+    private static final String TAG = "TensorFlowImageClass";
 
     // Only return this many results with at least this confidence.
     private static final int MAX_RESULTS = 3;
@@ -131,11 +132,12 @@ public class TensorFlowImageClassifier implements Classifier {
     }
 
     @Override
+
     public List<Recognition> recognizeImage(final Bitmap bitmap) {
         // Log this method so that it can be analyzed with systrace.
-        Trace.beginSection("recognizeImage");
+            Trace.beginSection("recognizeImage");
+            Trace.beginSection("preprocessBitmap");
 
-        Trace.beginSection("preprocessBitmap");
         // Preprocess the image data from 0-255 int to normalized float based
         // on the provided parameters.
         bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(), bitmap.getHeight());
